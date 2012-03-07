@@ -1,0 +1,78 @@
+% $Id: letter.tex 228 2010-12-11 21:20:15Z soohyunc $
+
+% Cover letter using letter.cls
+\documentclass{letter} % Uses 10pt
+%\usepackage{sty/helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font
+% the following commands control the margins:
+%\topmargin=-1in    % Make letterhead start about 1 inch from top of page
+\topmargin=-1.5in    % Make letterhead start about 1 inch from top of page
+%\textheight=8.5in    % text height can be bigger for a longer letter
+\textheight=10.5in    % text height can be bigger for a longer letter
+\oddsidemargin=0pt   % leftmargin is 1 inch
+\textwidth=6.5in     % textwidth of 6.5in leaves 1 inch for right margin
+
+\usepackage[dvips,
+	bookmarks,
+	bookmarksopen = false,
+	bookmarksnumbered = true,
+	breaklinks = true,
+	linktocpage,
+	pagebackref,
+	colorlinks = true,
+	linkcolor = black,
+	urlcolor  = blue,
+	citecolor = red,
+	anchorcolor = green,
+	pdftitle={Cover Letter},
+	pdfsubject={},
+	pdfkeywords={},
+	pdfauthor={Soo-Hyun Choi}]{hyperref}
+\usepackage{graphicx}
+
+% define graphicspath
+\graphicspath{{fig/},{img/}}
+
+\begin{document}
+% name for signature \longindentation=0pt
+% \signature{
+% \vspace{-3em}
+% \includegraphics[scale=0.3]{image.eps}\\
+% Soo-Hyun Choi}
+% needed to get closing flush left
+\let\raggedleft\raggedright                % needed to get date flush left
+
+
+% \begin{letter}
+
+\begin{center}
+{\large\bf Soo-Hyun Choi}
+\end{center}
+\medskip\hrule height .5pt
+\begin{center}
+{{\sf Next Generation S/W R\&D Group \\ Samsung Electronics, Co., Ltd.} \\
+{\small \href{mailto:sh9.choi@samsung.com}{\texttt{sh9.choi@samsung.com}}} 
+% {\small \url{http://www.cs.ucl.ac.uk/staff/s.choi}} \\
+}\\
+\end{center}
+
+%\vfill % forces letterhead to top of page
+\vspace{+2mm}
+
+% {\sf
+\noindent Soo-Hyun Choi has been a senior software engineer at Samsung 
+Electronics since 2011, mainly working on developing advanced HTML5 features for 
+Tizen platform. Before joining Samsung Electronics, he has worked as a research 
+assistant at Computer Laboratory of the University of Cambridge, United Kingdom. 
+
+He obtained his PhD at the Department of Computer Science of University College 
+London (UCL), United Kingdom in 2010, and MSc in the Department of Electrical 
+Engineering at the University of Southern California (USC), Los Angeles, USA. He 
+also worked as a staff researcher at ETRI (Electronics and Telecommunications 
+Research Institute), a Korean government-funded research organization, during 
+2000$\sim$2003.
+% }
+
+% \end{letter}
+
+\end{document}

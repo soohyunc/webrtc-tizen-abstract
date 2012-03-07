@@ -1,0 +1,166 @@
+%  article.tex (Version 2.81, released 24 September 2003)
+%  Article to demonstrate format for SPIE Proceedings
+%  Special instructions are included in this file after the
+%  symbol %>>>>
+%  Numerous commands are commented out, but included to show how
+%  to effect various options, e.g., to print page numbers, etc.
+%  This LaTeX source file is composed for LaTeX2e,
+%  not the older LaTeX version 2.09, as previous versions were.
+
+%  The following commands have been added in the SPIE class
+%  file (spie.cls) and will not be understood in other classes:
+%  \supit{}, \authorinfo{}, \skiplinehalf, \keywords{}
+%  The bibliography style file is called spiebib.bst,
+%  which replaces the standard style unstr.bst.
+
+%% \documentclass[]{./cls/spie}  %>>> use for US letter paper
+\documentclass[a4paper]{./cls/spie}  %>>> use this instead for A4 paper
+\addtolength{\voffset}{9mm}   %>>> moves text field down
+
+%  The following command loads a graphics package to include images
+%  in the document. It may be necessary to specify a DVI driver option,
+%  e.g., [dvips], but that may be inappropriate for some LaTeX
+%  installations.
+% \usepackage{setspace}
+\usepackage[dvips,
+    bookmarks,
+    bookmarksopen = false,
+    bookmarksnumbered = true,
+    breaklinks = true,
+    linktocpage,
+    pagebackref,
+    colorlinks = true,
+    linkcolor = black,
+    urlcolor  = blue,
+    citecolor = red,
+    anchorcolor = green,
+    pdftitle={Advanced HTML5 features in Tizen Web Platform},
+    pdfsubject={Conference Proposal},
+    pdfkeywords={HTML5, WebRTC,getUserMedia},
+    pdfauthor={Soo-Hyun Choi},
+    hyperindex = true]{hyperref}
+% \usepackage[]{color,graphicx}
+\usepackage{color,graphicx}
+\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{pifont}
+
+\usepackage{afterpage}
+\usepackage{color}
+\usepackage{array}
+\usepackage{float}
+% \usepackage[ulem=normalem]{changes}
+\usepackage{changebar}
+\setcounter{changebargrey}{0}
+
+
+% \title{WebRTC (Real-time Communications) for Tizen Platform}
+\title{Advanced HTML5 features in Tizen Web Platform}
+
+%>>>> The author is responsible for formatting the
+%  author list and their institutions.  Use  \skiplinehalf
+%  to separate author list from addresses and between each address.
+%  The correspondence between each author and his/her address
+%  can be indicated with a superscript in italics,
+%  which is easily obtained with \supit{}.
+
+% \author{Author 1\supit{a} and Author 2\supit{b}
+
+\author{{\normalsize{\bf Soo-Hyun Choi and Wonsuk Lee}}
+\skiplinehalf
+{\sf {\normalsize Next Generation S/W R\&D Group\\ Samsung Electronics, Co.,
+Ltd.}}\\
+{\tt {\small \{sh9.choi, wonsuk11.lee\}@samsung.com}}
+% \supit{a}Affiliation1, Address, City, Country; \\
+% \supit{b}Affiliation2, Address, City, Country
+}
+
+%>>>> Further information about the authors, other than their
+%  institution and addresses, should be included as a footnote,
+%  which is facilitated by the \authorinfo{} command.
+
+% \authorinfo{Further author information: (Send correspondence to
+% A.A.A.)\\A.A.A.: E-mail: aaa@tbk2.edu, Telephone: 1 505 123 1234\\  B.B.A.:
+% E-mail: bba@cmp.com, Telephone: +33 (0)1 98 76 54 32}
+%%>>>> when using amstex, you need to use @@ instead of @
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%>>>> uncomment following for page numbers
+\pagestyle{plain}
+%>>>> uncomment following to start page numbering at 301
+%\setcounter{page}{301}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+% In the advancement and proliferation of HTML5 technologies, WebRTC (Real-time
+% Communications)\cite{webrtc.w3c} has been gaining a remarkable interest among
+% web developers. It basically enables web browsers to have Real-Time 
+% Communications (RTC) capabilities using relatively simple JavaScript APIs. Until 
+% recently, RTC applications typically have required to build complex systems 
+% which involves not-so-trivial audio/video engineering works in real world 
+% environment. These difficulties have been a huge barrier for individual 
+% developers to create various types of RTC-capable applications, where WebRTC has 
+
+In the proliferation of the recent HTML5 technologies, web platforms, especially 
+mobile web platforms, have been achieving remarkable advancements in terms of 
+gaining supported features via relatively simple JavaScript APIs. To reflect 
+this tech movement, many browser vendors, including Mozilla, Chrome, Opera, and 
+Safari, have already started to implement them in their browsers, in which 
+uncannily introducing HTML5 to be a gist of those web platforms. At the same 
+time, HTML5 features are actively discussed for standardization to better take 
+into account the recent development activities at a number of W3C's working 
+groups.
+
+Tizen platform also implements many of the attractive HTML5 features such as
+WebRTC, WebAudio API, File System API, File API, and various Device APIs 
+(vibration API, battery status API, Network Information API, etc) of which are 
+almost completed as of now. Amongst these new features, we would like to take a 
+chance to demonstrate our WebRTC implementation using a sample peer-to-peer 
+application in this conference; the sample app calls a series of JavaScript APIs 
+associated with {\sf getUserMedia} and {\sf PeerConnection API} defined in the 
+WebRTC spec\cite{webrtc.w3c}.
+
+Lastly, we would like to talk, at the conference, about Tizen's future direction 
+in extending the remaining and upcoming HTML5 features that can drive it to be a 
+more popular web-based platform.
+
+
+
+
+\end{abstract}
+
+%>>>> Include a list of keywords after the abstract
+
+\keywords{{\small\sf HTML5, WebRTC, getUserMedia, WebAudio API}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \acknowledgments     %>>>> equivalent to \section*{ACKNOWLEDGMENTS}
+%
+% This unnumbered section is used to identify those who have aided the authors in
+% understanding or accomplishing the work presented and to acknowledge sources of
+% funding.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% References %%%%%
+
+\bibliographystyle{./cls/spiebib}   %>>>> makes bibtex use spiebib.bst
+% \bibliographystyle{abbrv}   %>>>> makes bibtex use spiebib.bst
+\bibliography{article}   %>>>> bibliography data in report.bib
+
+\end{document}
