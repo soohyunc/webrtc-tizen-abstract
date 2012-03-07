@@ -10,15 +10,14 @@ TRG := $(SRC:%.tex=%.pdf)
 LET := $(shell egrep -l 'begin{letter}' $(TEXFILES) | sed s/.tex//)
 TARGET= $(shell egrep -l '^[^%]*\\begin\{document\}' $(TEXFILES) | sed s/.tex//)
 ART = article
-STA = statement
-OUTPUT=webrtc-tizen.pdf
+OUTPUT=html5-tizen.pdf
 PWD := $(shell pwd)
 
 RM		:= rm -f
 RMLOG	:= ./sh/rmlog.sh
 
 # make pdf
-all: ${ART}.pdf ${LET}.pdf ${STA}.pdf
+all: ${ART}.pdf ${LET}.pdf
 
 ${ART}.pdf:  ${ART}.ps
 	@ps2pdf ${ART}.ps
@@ -26,20 +25,14 @@ ${ART}.pdf:  ${ART}.ps
 ${LET}.pdf:  ${LET}.ps
 	@ps2pdf ${LET}.ps
 
-${STA}.pdf: ${STA}.ps
-	@ps2pdf ${STA}.ps
-
 ${ART}.ps:  ${ART}.dvi
 	@dvips -t a4 -o ${ART}.ps ${ART}
 
 ${LET}.ps:  ${LET}.dvi
 	@dvips -t a4 -o ${LET}.ps ${LET}
 
-${STA}.ps: ${STA}.dvi
-	@dvips -t a4 -o ${STA}.ps ${STA}
-
 # shortcut, so we can say "make ps"
-ps: ${ART}.ps ${LET}.ps ${STA}.ps
+ps: ${ART}.ps ${LET}.ps
 
 # make target
 ${ART}.dvi: ${ART}.tex
@@ -51,14 +44,10 @@ ${ART}.dvi: ${ART}.tex
 ${LET}.dvi: ${LET}.tex
 	@latex ${LET}
 
-${STA}.dvi: ${STA}.tex
-	@latex ${STA}
-
 clean:
 	@echo "Start cleaning..."
 	@${RMLOG} ${ART}
 	@${RMLOG} ${LET}
-	@${RMLOG} ${STA}
 	@${RMLOG} $(shell find . -name ${OUTPUT} | sed s/\.\// | sed s/.pdf//)
 	@$(RM) *.*~
 	@echo "done!"
@@ -69,8 +58,8 @@ distclean: clean
 	@${RMFIG}
 	@echo "done!"
 
-merge: ${ART}.pdf ${LET}.pdf ${STA}.pdf
-	    @gs -q -sPAPERSIZE=a4 -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=${OUTPUT} chris6.pdf ${ART}.pdf ${LET}.pdf {STA}.pdf
+merge: ${ART}.pdf ${LET}.pdf
+	    @gs -q -sPAPERSIZE=a4 -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=${OUTPUT} ${ART}.pdf ${LET}.pdf
 
 wc:
 	@echo Approximate word count: \

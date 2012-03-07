@@ -39,7 +39,8 @@
     pdfkeywords={HTML5, WebRTC,getUserMedia},
     pdfauthor={Soo-Hyun Choi},
     hyperindex = true]{hyperref}
-% \usepackage[]{color,graphicx}
+% \usepackage{hyperref}
+\usepackage[]{color,graphicx}
 \usepackage{color,graphicx}
 \usepackage{verbatim}
 \usepackage[T1]{fontenc}
@@ -76,7 +77,7 @@
 
 \author{{\normalsize{\bf Soo-Hyun Choi and Wonsuk Lee}}
 \skiplinehalf
-{\sf {\normalsize Next Generation S/W R\&D Group\\ Samsung Electronics, Co.,
+{\sf {\normalsize Next Generation S/W R\&D Group\\ Samsung Electronics, Co., 
 Ltd.}}\\
 {\tt {\small \{sh9.choi, wonsuk11.lee\}@samsung.com}}
 % \supit{a}Affiliation1, Address, City, Country; \\
@@ -105,46 +106,40 @@ Ltd.}}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 
-% In the advancement and proliferation of HTML5 technologies, WebRTC (Real-time
-% Communications)\cite{webrtc.w3c} has been gaining a remarkable interest among
-% web developers. It basically enables web browsers to have Real-Time 
-% Communications (RTC) capabilities using relatively simple JavaScript APIs. Until 
-% recently, RTC applications typically have required to build complex systems 
-% which involves not-so-trivial audio/video engineering works in real world 
-% environment. These difficulties have been a huge barrier for individual 
-% developers to create various types of RTC-capable applications, where WebRTC has 
-
 In the proliferation of the recent HTML5 technologies, web platforms, especially 
 mobile web platforms, have been achieving remarkable advancements in terms of 
-gaining supported features via relatively simple JavaScript APIs. To reflect 
-this tech movement, many browser vendors, including Mozilla, Chrome, Opera, and 
-Safari, have already started to implement them in their browsers, in which 
-uncannily introducing HTML5 to be a gist of those web platforms. At the same 
-time, HTML5 features are actively discussed for standardization to better take 
-into account the recent development activities at a number of W3C's working 
-groups.
+gaining supported features via markup, CSS, and relatively simple JavaScript 
+APIs.  To reflect this tech movement, many browser vendors, including Mozilla, 
+Chrome, Opera, and Safari, have already started to implement them in their 
+browsers, in which uncannily introducing HTML5 to be a gist of those web 
+platforms. At the same time, HTML5 features are actively discussed for 
+standardization to better take into account the recent development activities at 
+a number of W3C's working groups\cite{whatwg.w3c}$^{,}$~\cite{dapwg.w3c}$^{,}$
+\cite{webrtcwg.w3c}.
+% a number of W3C's working groups\cite{whatwg.w3c}\cite{dapwg.w3c}
+% \cite{webrtcwg.w3c}.
 
 Tizen platform also implements many of the attractive HTML5 features such as
-WebRTC, WebAudio API, File System API, File API, and various Device APIs 
-(vibration API, battery status API, Network Information API, etc) of which are 
-almost completed as of now. Amongst these new features, we would like to take a 
-chance to demonstrate our WebRTC implementation using a sample peer-to-peer 
-application in this conference; the sample app calls a series of JavaScript APIs 
-associated with {\sf getUserMedia} and {\sf PeerConnection API} defined in the 
-WebRTC spec\cite{webrtc.w3c}.
+WebRTC\cite{webrtc.w3c}, WebAudio API\cite{webaudioapi.w3c}, File 
+API\cite{fileapi.w3c}, and various Device APIs (vibration 
+API\cite{vibrationapi.w3c}, battery status API\cite{batteryapi.w3c}, Network 
+Information API\cite{netinfoapi.w3c}, etc) of which are almost completed as of 
+now.  Amongst these implemented features in Tizen, we would particularly like to 
+take a chance to demonstrate our WebRTC implementation using a sample 
+peer-to-peer application in this conference; the sample app calls a series of 
+JavaScript APIs associated with {\sf getUserMedia}\cite{getusermedia.w3c} and 
+{\sf PeerConnection API} defined in the WebRTC spec\cite{webrtc.w3c}.
 
 Lastly, we would like to talk, at the conference, about Tizen's future direction 
 in extending the remaining and upcoming HTML5 features that can drive it to be a 
-more popular web-based platform.
-
-
+more solid yet flexible web-based platform. \\
 
 
 \end{abstract}
 
 %>>>> Include a list of keywords after the abstract
 
-\keywords{{\small\sf HTML5, WebRTC, getUserMedia, WebAudio API}}
+\keywords{{\small\sf HTML5, WebRTC, getUserMedia, WebAudio API}}\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,6 +156,7 @@ more popular web-based platform.
 
 \bibliographystyle{./cls/spiebib}   %>>>> makes bibtex use spiebib.bst
 % \bibliographystyle{abbrv}   %>>>> makes bibtex use spiebib.bst
+{\small
 \bibliography{article}   %>>>> bibliography data in report.bib
-
+}
 \end{document}
