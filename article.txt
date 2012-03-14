@@ -1,0 +1,30 @@
+Title: Advanced HTML 5 features in Tizen Web Platform
+
+Author: Soo-Hyun Choi and Wonsuk Lee
+Affiliation: Samsung Electronics, Co., Ltd.
+E-mail: {sh9.choi, wonsuk11.lee}@samsung.com
+
+Abstract:
+
+In the proliferation of the recent HTML5 technologies, web platforms, especially 
+mobile web platforms, have been achieving remarkable advancements in terms of 
+gaining supported features via markup, CSS, and relatively simple JavaScript 
+APIs.  To reflect this tech movement, many browser vendors, including Mozilla, 
+Chrome, Opera, and Safari, have already started to implement them in their 
+browsers, in which uncannily introducing HTML5 to be a gist of those web 
+platforms. At the same time, HTML5 features are actively discussed for 
+standardization to better take into account the recent development activities at 
+a number of W3C's working groups. 
+
+Tizen platform also implements many of the attractive HTML5 features such as 
+WebRTC, WebAudio API, File API, and various Device APIs (vibration API, battery 
+status API, Network Information API, etc) of which are almost completed as of 
+now.  Amongst these implemented features in Tizen, we would particularly like to 
+take a chance to demonstrate our WebRTC implementation using a sample 
+peer-to-peer application in this conference; the sample app calls a series of 
+JavaScript APIs associated with getUserMedia and PeerConnection API defined in 
+the WebRTC spec.
+
+Lastly, we would like to talk, at the conference, about Tizen's future direction
+in extending the remaining and upcoming HTML5 features that can drive it to be a
+more solid yet flexible web-based platform.
